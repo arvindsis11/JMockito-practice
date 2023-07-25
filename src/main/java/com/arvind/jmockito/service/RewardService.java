@@ -3,6 +3,7 @@ package com.arvind.jmockito.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.arvind.jmockito.apis.EmailSender;
 import com.arvind.jmockito.model.Profile;
 import com.arvind.jmockito.validationutil.InputValidation;
 
@@ -43,6 +44,10 @@ public class RewardService {
 		Map<String, String> mp = new HashMap<>();
 		mp.put("arvind", "1000");
 		return mp;
+	}
+	
+	public void sendArgumentCaptorMail(String mail,String tomail,String body,EmailSender send) {
+		send.sendMail(mail, tomail, body);
 	}
 	
 
