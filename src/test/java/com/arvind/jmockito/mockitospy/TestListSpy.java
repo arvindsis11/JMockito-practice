@@ -29,7 +29,7 @@ class TestListSpy {
 		assertEquals(0, list.size());
 		verify(list,times(1)).add("hello1");
 		verify(list,never()).remove(0);
-		verify(list).size();
+		verify(list,times(3)).size();
 		
 	}
 	
